@@ -455,11 +455,14 @@ var jsonTree = (function() {
                                 <b>' + sym[1] + '</b>' +
                             '</div>' + comma +
                         '</div>';
-
+jsontree_expand-button
                 if (label !== null) {
                     str = '\
                         <span class="jsontree_label-wrapper">\
                             <span class="jsontree_label">' +
+                            '<div class="icon"> \
+                                <i class="material-icons">code</i> \
+                            </div>' +
                                 '<span class="jsontree_expand-button"></span>' +
                                 '"' + label +
                             '"</span> : \
