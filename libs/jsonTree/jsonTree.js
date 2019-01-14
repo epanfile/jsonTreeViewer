@@ -6,7 +6,7 @@
  * Released under the MIT license (LICENSE.txt)
  */
 
-var jsonTree = (function() {
+export var jsonTree = (function() {
 
     /* ---------- Utilities ---------- */
     var utils = {
@@ -455,7 +455,7 @@ var jsonTree = (function() {
                                 <b>' + sym[1] + '</b>' +
                             '</div>' + comma +
                         '</div>';
-jsontree_expand-button
+
                 if (label !== null) {
                     str = '\
                         <span class="jsontree_label-wrapper">\
