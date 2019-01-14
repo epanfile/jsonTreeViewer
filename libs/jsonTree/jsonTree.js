@@ -460,12 +460,10 @@ export var jsonTree = (function() {
                     str = '\
                         <span class="jsontree_label-wrapper">\
                             <span class="jsontree_label">' +
-                            '<div class="icon"> \
-                                <i class="material-icons">code</i> \
-                            </div>' +
+                            '<i class="material-icons">add</i>' +
                                 '<span class="jsontree_expand-button"></span>' +
                                 '"' + label +
-                            '"</span> : \
+                            '" :</span> \
                         </span>' + str;
                 }
 
