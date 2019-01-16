@@ -93,6 +93,26 @@ export var jsonTree = (function() {
 
         },
 
+        closeComplex: function(el) {
+            el.classList.remove('jsontree_node_expanded');
+            const icon = el.dom.find('.jsontree_expand-button');
+            if (icon) {
+                icon.innerHTML = 'add';
+            }
+        },
+
+        openComplex: function(el) {
+            el.classList.add('jsontree_node_expanded');
+            const icon = el.dom.find('.jsontree_expand-button');
+            if (icon) {
+                icon.innerHTML = 'remove';
+            }
+        },
+
+        toggleComplex: function(el) {
+            el.dom.hasClass('jsontree_node_expanded') ? this.closeComplex(el) : this.openComplex(el);
+        },
+
         /**
          * Implements the kind of an inheritance by
          * using parent prototype and
@@ -460,8 +480,7 @@ export var jsonTree = (function() {
                     str = '\
                         <span class="jsontree_label-wrapper">\
                             <span class="jsontree_label">' +
-                            '<i class="material-icons">add</i>' +
-                                '<span class="jsontree_expand-button"></span>' +
+                                '<i class="material-icons jsontree_expand-button">add</i>' +
                                 '"' + label +
                             '" :</span> \
                         </span>' + str;
@@ -511,7 +530,7 @@ export var jsonTree = (function() {
             self.isRoot = true;
             self.parent = null;
 
-            el.classList.add('jsontree_node_expanded');
+            utils.openComplex(el);
         }
 
         self.el = el;
@@ -555,7 +574,7 @@ export var jsonTree = (function() {
             }
 
             if (!this.isRoot) {
-                this.el.classList.add('jsontree_node_expanded');
+                utils.openComplex(this.el);
             }
 
             if (isRecursive) {
@@ -578,7 +597,7 @@ export var jsonTree = (function() {
             }
 
             if (!this.isRoot) {
-                this.el.classList.remove('jsontree_node_expanded');
+                utils.closeComplex(this.el);
             }
 
             if (isRecursive) {
@@ -601,7 +620,7 @@ export var jsonTree = (function() {
                 return;
             }
 
-            this.el.classList.toggle('jsontree_node_expanded');
+            utils.toggleComplex(this.el);
 
             if (isRecursive) {
                 var isExpanded = this.el.classList.contains('jsontree_node_expanded');

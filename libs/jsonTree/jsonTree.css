@@ -44,6 +44,12 @@
     border-radius: 4px;
     cursor: default;
 }
+.jsontree_label i.material-icons {
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: -16px;
+}
 .jsontree_node_marked > .jsontree_label-wrapper > .jsontree_label {
     background: #fff2aa;
 }
@@ -83,8 +89,8 @@
     top: 3px;
     left: -15px;
     display: block;
-    width: 11px;
-    height: 11px;
+    width: 16px;
+    height: 16px;
 }
 .jsontree_node_expanded > .jsontree_label-wrapper > .jsontree_label > .jsontree_expand-button {
     background-position: 0 -11px;
