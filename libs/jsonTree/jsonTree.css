@@ -21,7 +21,6 @@
 /* Styles for a list of child nodes */
 .jsontree_child-nodes {
     display: none;
-    margin-bottom: 5px;
     line-height: 2;
     list-style-type: none;
 }
