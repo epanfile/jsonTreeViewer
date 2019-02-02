@@ -97,7 +97,8 @@ export var jsonTree = (function() {
             el.classList.remove('jsontree_node_expanded');
             const icon = el.dom.find('.jsontree_expand-button');
             if (icon) {
-                icon.innerHTML = 'add';
+                icon.classList.remove('mdi-minus-box-outline');
+                icon.classList.add('mdi-plus-box-outline');
             }
         },
 
@@ -105,7 +106,8 @@ export var jsonTree = (function() {
             el.classList.add('jsontree_node_expanded');
             const icon = el.dom.find('.jsontree_expand-button');
             if (icon) {
-                icon.innerHTML = 'remove';
+                icon.classList.remove('mdi-plus-box-outline');
+                icon.classList.add('mdi-minus-box-outline');
             }
         },
 
@@ -480,7 +482,7 @@ export var jsonTree = (function() {
                     str = '\
                         <span class="jsontree_label-wrapper">\
                             <span class="jsontree_label">' +
-                                '<i class="material-icons jsontree_expand-button">add</i>' +
+                                '<i class="mdi-set mdi-plus-box-outline jsontree_expand-button"></i>' +
                                 '"' + label +
                             '" :</span> \
                         </span>' + str;
