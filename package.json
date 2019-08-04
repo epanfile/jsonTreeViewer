@@ -1,0 +1,20 @@
+{
+  "name": "jsonTreeViewer",
+  "version": "1.0.0",
+  "description": "The library and the viewer released under the MIT license (LICENSE.txt).",
+  "main": "jsonTreeViewer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epanfile/jsonTreeViewer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epanfile/jsonTreeViewer/issues"
+  },
+  "homepage": "https://github.com/epanfile/jsonTreeViewer#readme"
+}
