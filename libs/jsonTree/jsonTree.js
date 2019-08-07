@@ -11,6 +11,20 @@ export var jsonTree = (function() {
     /* ---------- Utilities ---------- */
     var utils = {
 
+        getPlusIcon: function() {
+            return "M19,19V5H5V19H19M19,3C20.1,3 21,3.9 21,5V19C21,20.1 20.1,21 19,21H5C3.9,21 3,20.1 3,19V5C3,3.89 3.9,3 5,3H19M11,7H13V11H17V13H13V17H11V13H7V11H11V7Z";
+        },
+
+        getMinusIcon: function() {
+            return "M19,19V5H5V19H19M19,3C20.1,3 21,3.9 21,5V19C21,20.1 20.1,21 19,21H5C3.9,21 3,20.1 3,19V5C3,3.89 3.9,3 5,3H19M17,11V13H7V11H17Z";
+        },
+
+        getIconSvg: function(coordinates) {
+            return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+                '<path d="' + coordinates + '"/>' +
+                '</svg>';
+        },
+
         /*
          * Returns js-"class" of value
          *
@@ -97,8 +111,7 @@ export var jsonTree = (function() {
             el.classList.remove('jsontree_node_expanded');
             const icon = el.dom.find('.jsontree_expand-button');
             if (icon) {
-                icon.classList.remove('mdi-minus-box-outline');
-                icon.classList.add('mdi-plus-box-outline');
+                icon.innerHTML = this.getIconSvg(this.getPlusIcon());
             }
         },
 
@@ -106,8 +119,7 @@ export var jsonTree = (function() {
             el.classList.add('jsontree_node_expanded');
             const icon = el.dom.find('.jsontree_expand-button');
             if (icon) {
-                icon.classList.remove('mdi-plus-box-outline');
-                icon.classList.add('mdi-minus-box-outline');
+                icon.innerHTML = this.getIconSvg(this.getMinusIcon());
             }
         },
 
@@ -482,7 +494,7 @@ export var jsonTree = (function() {
                     str = '\
                         <span class="jsontree_label-wrapper">\
                             <span class="jsontree_label">' +
-                                '<i class="mdi-set mdi-plus-box-outline jsontree_expand-button"></i>' +
+                                '<span class="jsontree_expand-button" viewBox="0 0 24 24">' + utils.getIconSvg(utils.getPlusIcon()) + '</span>' +
                                 '"' + label +
                             '" :</span> \
                         </span>' + str;
